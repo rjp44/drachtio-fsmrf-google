@@ -1,0 +1,10 @@
+---
+- hosts: container
+  become: yes
+  vars_prompt:
+    - name: "build_with_grpc"
+      prompt: "Include the grpc modules (mod_google_transcribe, mod_google_tts, mod_dialogflow)?"
+      private: no
+      default: false
+  roles:
+    - ansible-role-fsmrf
